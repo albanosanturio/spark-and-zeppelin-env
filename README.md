@@ -4,6 +4,14 @@
 
 This compose file creates 1 master node, 2 worker nodes and a zeppelin standalone  
 
+## Cleaning docker containers and images
+
+If needed, the commands to get a clean docker would be:
+```bash
+docker stop $(docker ps -aq)
+docker container rm -f $(docker container ls -aq)
+docker image rm -f $(docker image ls -aq)
+```
 
 ## in terminal
 
