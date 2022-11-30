@@ -5,6 +5,7 @@ services:
   spark-master:
     image: docker.io/bitnami/spark:3.1
     container_name: spark-master
+    user: root # This parameter is key to let spark write on volumes
     hostname: spark-master
     ports:
       - "8080:8080"
@@ -12,6 +13,8 @@ services:
     volumes:
       - ./apps/spark:/opt/spark-apps:rw
       - ./data/spark:/opt/spark-data:rw
+      #- ./apps/spark/spark-warehouse:opt/spark-apps/spark-warehouse:rw
+      - /mnt/c/Users/asanturi/.m2/repository/com:/opt/spark-libraries/
     environment:
       - "SPARK_LOCAL_IP=spark-master"
       - "SPARK_MODE=master"
@@ -64,21 +67,20 @@ services:
       - ./data/spark:/opt/spark-data
 
 
-
-  zeppelin:
-    image: apache/zeppelin:0.9.0
-    container_name: zeppelin-compose
-    ports:
-      - "9090:8080"
-    volumes:
-      - /mnt/c/Users/asanturi/Documents/test/spark:/zeppelin/spark
-      - ./apps/zeppelin:/opt/zeppelin-apps
-    #  - ./data/zeppelin:/opt/zeppelin-data
-      - ./data/zeppelin/notebooks:/opt/zeppelin-notebooks
-      - ./logs:/logs
-      - ./notebooks:/notebooks
-    #  - ./conf/interpreter.json:/zeppelin/conf/interpreter.json
-    #  - /mnt/c/Users/asanturi/Documents/zeppelin-standalone/spark3:/opt/spark
+#  zeppelin:
+#    image: apache/zeppelin:0.9.0
+#    container_name: zeppelin-compose
+#    ports:
+#      - "9090:8080"
+#    volumes:
+#      - /mnt/c/Users/asanturi/Documents/test/spark:/zeppelin/spark
+#      - ./apps/zeppelin:/opt/zeppelin-apps
+#    #  - ./data/zeppelin:/opt/zeppelin-data
+#      - ./data/zeppelin/notebooks:/opt/zeppelin-notebooks
+#      - ./logs:/logs
+#      - ./notebooks:/notebooks
+#    #  - ./conf/interpreter.json:/zeppelin/conf/interpreter.json
+#    #  - /mnt/c/Users/asanturi/Documents/zeppelin-standalone/spark3:/opt/spark
 
 
 #    environment:

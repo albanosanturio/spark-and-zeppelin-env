@@ -1,0 +1,182 @@
+494;494;MCGRAW;;;;;;;;
+494;494;McGraw Edison;;N;N;;;;;
+550;550;McGraw-Edison;;N;N;;;;CMP;
+996;996;McGraw Edison;;N;N;;;;RGE;
+25RT3;25RT3;Ferranti-Packard;;N;Y;;one compartment for diverter - selector switch. Problems with the reversing switch - cocking. Modification kits were available. Recommend on-line filtration system if not installed yet.;;CMP;
+396B;396B;MCGRAW EDISON;;N;N;;;;NYSEG;
+396BL;396BL;McGraw Edison;;N;N;;;;RGE;
+397D;397D;MCGRAW EDISON;Y;N;N;;;;NYSEG;
+3XM1203;?;REINHAUSEN;Y;;;;;;;
+3XMI802170D18353W;?;REINHAUSEN;Y;;;;;;;
+496B;496B;MCGRAW;;;;;;;;
+500BL;500BL;McGraw-Edison;;N;N;;;;RGE;
+550B;550B;MCGRAW EDISON;;N;N;;;;;
+550BL;550BL;McGraw-Edison;;N;N;;;;CMP;
+550BLS;550BLS;McGraw-Edison;;N;N;;;;CMP;
+550C;550C;MCGRAW EDISON;;N;N;;;;NYSEG;
+550CL;550CL;McGraw Edison;;N;N;;;;RGE;
+550CS;550CS;MCGRAW EDISON;;N;N;;;;NYSEG;
+550H;550H;MCGRAW EDISON;;N;N;;;;NYSEG;
+550HS;550HS;McGraw Edison;;N;N;;;;RGE;
+550L;550L;MCGRAW EDISON;;N;N;;;;NYSEG;
+550LS;550LS;Pennsylvania;;N;N;;;;RGE;
+ABBUZE;UZE;ABB;;Y;N;;;;CMP;
+AFR;AFR;Allis Chalmers;;N;N;;;;RGE;Technically removable but not feasible so include LTC score in overall score.
+LR300;LR300;General Electric;Y;N;N;;;;;Technically removable but not feasible so include LTC score in overall score.
+LR-300;LR300;General Electric;Y;N;N;;;;RGE;Technically removable but not feasible so include LTC score in overall score.
+LR-500;LR500;General Electric;;N;N;;;;CMP;Technically removable but not feasible so include LTC score in overall score.
+LR-500M;LR500M;GENERAL ELECTRIC;Y;N;N;;;;NYSEG;Technically removable but not feasible so include LTC score in overall score.
+LR59;LR59;General Electric;;N;Y;Parts are an issue;Separate diverter - selector compartments. - Oil leaks through bushing contacts. Scroll cam and rollers wear problems.;Very old design. Consider retirement.;CMP;
+LR-59;LR59;General Electric;;N;Y;Parts are an issue;Separate diverter - selector compartments. - Oil leaks through bushing contacts. Scroll cam and rollers wear problems.;Very old design. Consider retirement.;CMP;
+LR65;LR65;General Electric;;N;Y;Parts are an issue;Separate diverter - selector compartments. - Oil leaks through bushing contacts. Scroll cam and rollers wear problems.;Newer design. Some parts can be purchased from GE- Canada - Bill Himmen;CMP;
+LR-65;LR65;General Electric;;N;Y;Parts are an issue;Separate diverter - selector compartments. - Oil leaks through bushing contacts. Scroll cam and rollers wear problems.;Newer design. Some parts can be purchased from GE- Canada - Bill Himmen;CMP;
+LR-69;LR69;General Electric;;N;Y;;Separate diverter - selector compartments. - Oil leaks through bushing contacts. Scroll cam and rollers wear problems.;Newer design. Some pars can be purchased from GE- Canada - Bill Himmen;RGE;
+LR83;LR83;General Electric;;N;Y;Parts are an issue;Separate diverter - selector compartments. - Oil leaks through bushing contacts. Scroll cam and rollers wear problems.;Newer design. Some parts can be purchased from GE- Canada - Bill Himmen;CMP;
+LR-83;LR83;General Electric;;N;Y;Parts are an issue;Separate diverter - selector compartments. - Oil leaks through bushing contacts. Scroll cam and rollers wear problems.;Newer design. Some parts can be purchased from GE- Canada - Bill Himmen;CMP;
+LRT200;LRT200;General Electric;Y;Y;N;;;;;
+LRT-200;LRT200;General Electric;Y;Y;N;;;;;
+LRT2002;LRT2002;General Electric;Y;Y;N;;;;CMP;
+LRT-2002;LRT2002;General Electric;Y;Y;N;;;;;
+LRT-200-2;LRT2002;General Electric;Y;Y;N;;;;CMP;
+LRT200A;LRT200A;General Electric;Y;Y;N;;;;CMP;
+LRT-200A;LRT200A;General Electric;Y;Y;N;;;;RGE;
+LRT200A2;LRT200A2;General Electric;Y;Y;N;;;;;
+LRT200A-2;LRT200A2;General Electric;Y;Y;N;;;;RGE;
+LRT-200A2;LRT200A2;General Electric;Y;Y;N;;;;;
+LRT-200A-2;LRT200A2;General Electric;Y;Y;N;;;;CMP;
+LRT38;LRT38;General Electric;;N;Y;Parts are an issue;Separate diverter - selector compartments. - Oil leaks through bushing contacts. Scroll cam and rollers wear problems.;Very old design. Consider retirement.;;
+LRT-38;LRT38;General Electric;;N;Y;Parts are an issue;Separate diverter - selector compartments. - Oil leaks through bushing contacts. Scroll cam and rollers wear problems.;Very old design. Consider retirement.;CMP;Technically removable but not feasible so include LTC score in overall score.
+LRT48;LRT48;General Electric;;N;Y;Parts other than contacts are an issue;Separate diverter - selector compartments. - Oil leaks through bushing contacts. Scroll cam and rollers wear problems.;Very old design. Consider retirement.;RGE;Technically removable but not feasible so include LTC score in overall score.
+LRT-48;LRT48;General Electric;;N;Y;Parts are an issue;Separate diverter - selector compartments. - Oil leaks through bushing contacts. Scroll cam and rollers wear problems.;Very old design. Consider retirement.;CMP;Technically removable but not feasible so include LTC score in overall score.
+LRT68;LRT68;General Electric;;N;Y;Parts other than contacts are an issue;Separate diverter - selector compartments. - Oil leaks through bushing contacts. Scroll cam and rollers wear problems.;Newer design. Some parts can be purchased from GE- Canada;RGE;Technically removable but not feasible so include LTC score in overall score.
+LRT-68;LRT68;General Electric;;N;Y;Parts are an issue;Separate diverter - selector compartments. - Oil leaks through bushing contacts. Scroll cam and rollers wear problems.;Newer design. Some parts can be purchased from GE- Canada - Bill Himmen;CMP;Technically removable but not feasible so include LTC score in overall score.
+LRT68C2;;GE;;;;;;;;
+LRT68C2;LRT68;General Electric;;N;Y;Parts other than contacts are an issue;Separate diverter - selector compartments. - Oil leaks through bushing contacts. Scroll cam and rollers wear problems.;Newer design. Some parts can be purchased from GE- Canada;RGE;
+LRT-69M92M5M;LRT69M92M5M;General Electric;;N;Y;;;;;Technically removable but not feasible so include LTC score in overall score.
+LRT72;LRT72;General Electric;;N;Y;Parts other than contacts are an issue;Separate diverter - selector compartments. - Oil leaks through bushing contacts. Scroll cam and rollers wear problems.;Newer design. Some parts can be purchased from GE- Canada;RGE;Technically removable but not feasible so include LTC score in overall score.
+LRT-72;LRT72;GENERAL ELECTRIC;;N;Y;Parts will become an issue soon due to age;Newer design.Separate diverter - selector compartments. - Oil leaks through bushing contacts. Scroll cam and rollers wear problems.;Some parts can be purchased from GE- Canada - Bill Himmen;NYSEG;Technically removable but not feasible so include LTC score in overall score.
+M1;M1;REINHAUSEN;;Y;N;;;;NYSEG;
+MA/MB-1;MA/MB1;MOLONEY;;Y;Y;;Old design headboard oil leaks;Replacement parts can be reverse - engineered by Pier Engineering in Oakville, Ontario, Canada;NYSEG;
+MA-0;MA0;Molony;;N;Y;;Old design headboard oil leaks;Replacement parts can be reverse - engineered by Pier Engineering in Oakville, Ontario, Canada;RGE;
+MA1;MA1;Molony;;N;Y;;Old design headboard oil leaks;Replacement parts can be reverse - engineered by Pier Engineering in Oakville, Ontario, Canada;RGE;
+MA-1;MA1;Molony;;N;Y;;Old design headboard oil leaks;Replacement parts can be reverse - engineered by Pier Engineering in Oakville, Ontario, Canada;RGE;
+MAMB1;MA/MB1;MOLONEY;;Y;Y;;Old design headboard oil leaks;Replacement parts can be reverse - engineered by Pier Engineering in Oakville, Ontario, Canada;NYSEG;
+MAO;MAO;Molony;;N;Y;;Old design headboard oil leaks;Replacement parts can be reverse - engineered by Pier Engineering in Oakville, Ontario, Canada;RGE;
+MB;;MOLONEY;;;;;;;;
+MI-1200;MI1200;Reinhausen;;Y;N;;;;CMP;
+MIII;MIII;Reinhausen;;Y;N;;3 phase in tank design - add MR on line filtration system to extend maintenance cycle;;RGE;
+MLT32;MLT32;General Electric;;N;Y;Parts are an issue;;;;Technically removable but not feasible so include LTC score in overall score.
+MLT-32;MLT32;General Electric;;N;Y;Parts are an issue;;;RGE;Technically removable but not feasible so include LTC score in overall score.
+R;R;REINHAUSEN;;Y;N;;;;NYSEG;
+REIN;?;REINHAUSEN;Y;;;;;;;
+Reinhausen MIII 600Y-72;MIII;Reinhausen;;Y;N;;3 phase in tank design - add MR on line filtration system to extend maintenance cycle;;;
+REINHAUSEN MIII-600Y-72;MIII;Reinhausen;;Y;N;;3 phase in tank design - add MR on line filtration system to extend maintenance cycle;;;
+REINHAUSEN RMV-II;RMV11;REINHAUSEN;Y;Y;N;;;;;
+ReinhausenMIII600Y72;MIII;Reinhausen;;Y;N;;3 phase in tank design - add MR on line filtration system to extend maintenance cycle;;RGE;
+ReinhausenRMV11;RMV11;REINHAUSEN;Y;Y;N;;;;;
+REINHAUSENRMVII;RMV11;REINHAUSEN;Y;Y;N;;;;;
+REINHAUSENRMVII1500;RMVlI1500;REINHAUSEN;Y;Y;N;;;;;
+REINHAUSENRMVII150069;RMVlI1500;REINHAUSEN;Y;Y;N;;;;;
+REINM;M1;REINHAUSEN;;Y;N;;;;NYSEG;
+REINM1;M1;REINHAUSEN;;Y;N;;;;NYSEG;
+REINVRF;VRF;REINHAUSEN;Y;Y;N;;;;;
+RMA-A-1320;RMVA1320;REINHAUSEN;Y;Y;N;;;;;
+RMT-1;RMT1;Reinhausen;;Y;N;;;;CMP;
+RMV;RMV;Reinhausen;Y;Y;N;;Very good design - uses vacuum chamber for diverter contacts. Low maintenance costs.;Contact MR - Humbolt, Tennessee USA for parts;CMP;
+RMV II;RMV II;Reinhausen;Y;Y;N;;;;RGE;
+RMV II 1500;RMVII1500;REINHAUSEN;Y;Y;N;;;;;
+RMV1;RMV1;REINHAUSEN;Y;Y;N;;;;;
+RMV-1;RMV1;REINHAUSEN;Y;Y;N;;;;NYSEG;
+RMV11;RMV11;REINHAUSEN;Y;Y;N;;;;;
+RMV-11;RMV11;REINHAUSEN;Y;Y;N;;;;;
+RMV-11 2000;RMV112000;REINHAUSEN;Y;Y;N;;;;;
+RMV-11-1;RMV111;REINHAUSEN;Y;Y;N;;;;;
+RMV-11-1000-1;RMV1110001;REINHAUSEN;Y;Y;N;;;;;
+RMV11-15;RMV1115;REINHAUSEN;Y;Y;N;;;;;
+RMV-11-15;RMV1115;REINHAUSEN;Y;Y;N;;;;NYSEG;
+RMV-11-1500;RMV111500;REINHAUSEN;Y;Y;N;;;;;
+RMV-11-1500-25;RMV11150025;REINHAUSEN;Y;Y;N;;;;;
+RMV-11-2000;RMV112000;REINHAUSEN;Y;Y;N;;;;;
+RMV112500;RMV11;REINHAUSEN;Y;Y;N;;;;;
+RMV2;RMV2;REINHAUSEN;Y;Y;N;;;;;
+RMV-2;RMV2;REINHAUSEN;Y;Y;N;;;;;
+RMV-2-11;RMV111;REINHAUSEN;Y;Y;N;;;;;
+RMVA;RMVA;REINHAUSEN;Y;Y;N;;;;;
+RMV-A;RMVA;REINHAUSEN;Y;Y;N;;;;NYSEG;
+RMVII;RMV II;Reinhausen;Y;Y;N;;;;RGE;
+RMVII;RMV11;REINHAUSEN;Y;Y;N;;;;;
+RMV-II;RMV11;REINHAUSEN;Y;Y;N;;;;NYSEG;
+RMV-II 1500;RMV111500;REINHAUSEN;Y;Y;N;;;;;
+RMVII-1500-72.5;RMV111500725;REINHAUSEN;Y;Y;N;;;;;
+RMV-lI 1500;RMVlI1500;REINHAUSEN;Y;Y;N;;;;;
+RMVLL;RMV11;REINHAUSEN;Y;Y;N;;;;;
+RMV-ll-1500;RMVll1500;REINHAUSEN;Y;Y;N;;;;;
+RMV-LL-2000;RMVLL2000;REINHAUSEN;Y;Y;N;;;;;
+SL;SL;;;;;;;;;
+TC23-2;TC232;FEDERAL PACIFIC;;N;Y;;Newer design - diverter -selector in one tank- epoxy head cracks, gasket problems. Chain drive, requires frequent adjustments - recommend on-line filtration system;Parts available from Pauwells Inc. Contact - Ms.Geri Voepel - Winnipeg, Manitoba, Can.;NYSEG;
+TC-23-2;TC232;FEDERAL PACIFIC;;N;Y;;Newer design - diverter -selector in one tank- epoxy head cracks, gasket problems. Chain drive, requires frequent adjustments - recommend on-line filtration system;Parts available from Pauwells Inc. Contact - Ms.Geri Voepel - Winnipeg, Manitoba, Can.;NYSEG;
+TC-25;TC25;FEDERAL PACIFIC;;N;Y;;Older design - diverter -selector may be one tank or separate,  epoxy head cracks, gasket problems. Chain drive, requires frequent adjustments - recommend on-line filtration system;Parts available from Pauwells Inc. Contact - Ms.Geri Voepel - Winnipeg, Manitoba, Can.;NYSEG;
+TC-525;TC525;Federal Pacific;;N;Y;;Older design - diverter -selector may be one tank or separate,  epoxy head cracks, gasket problems. Chain drive, requires frequent adjustments - recommend on-line filtration system;Parts available from Pauwells Inc. Contact - Ms.Geri Voepel - Winnipeg, Manitoba, Can.;CMP;
+TC546;TC546;FEDERAL PACIFIC;;N;Y;;Older design - diverter -selector in one tank- epoxy head cracks, gasket problems. Chain drive, requires frequent adjustments - recommend on-line filtration system;Parts available from Pauwells Inc. Contact - Ms.Geri Voepel - Winnipeg, Manitoba, Can.;NYSEG;
+TC-546;TC546;FEDERAL PACIFIC;;N;Y;;Older design - diverter -selector in one tank- epoxy head cracks, gasket problems. Chain drive, requires frequent adjustments - recommend on-line filtration system;Parts available from Pauwells Inc. Contact - Ms.Geri Voepel - Winnipeg, Manitoba, Can.;NYSEG;
+TLF;TLF;Allis Chalmers;;N;Y;Mechanism hubs and shafts are wearing causing contact alignment issues;;;RGE;Technically removable but not feasible so include LTC score in overall score.
+TLH;TLH;Allis-Chalmers;;N;N;;;;;Technically removable but not feasible so include LTC score in overall score.
+TLH-10;TLH10;Allis Chalmers;;N;Y;Mechanism hubs and shafts are wearing causing contact alignment issues;;;RGE;Technically removable but not feasible so include LTC score in overall score.
+TLH-20;TLH20;Allis-Chalmers;;Y;N;;;;CMP;
+TLH21;TLH21;Allis Chalmers;;Y;N;;;;RGE;
+TLH-21;TLH21;Allis-Chalmers;;Y;N;;;;CMP;
+TLS;TLS;Allis-Chalmers;;N;N;;;;CMP;Technically removable but not feasible so include LTC score in overall score.
+TMQ-404L33S9K-100;;ELIN;;;;;;;;
+TYPE R;R;REINHAUSEN;;Y;N;;;;NYSEG;
+TYPER;R;REINHAUSEN;;Y;N;;;;NYSEG;
+URS;URS;Westinghouse;;N;Y;Parts are an issue;Separate diverter - selector compartments. - Oil leaks through headboard and contact bushings. Frequent fibber gear failures in the drive gear compartment;Replacement parts hard to get and very expensive. Some parts were available in Burlington, Ontario , Canada - must check if still available;CMP;
+URS-C;URSC;WESTINGHOUSE;;N;Y;Parts are an issue;same as above (URS);same as above (URS);NYSEG;
+URT;URT;Westinghouse;;N;Y;High levels of combustible gas produced in transfer compartment;Separate diverter - selector compartments. - Oil leaks through headboard and contact bushings. Frequent fibber gear failures in the drive gear compartment;Replacement parts hard to get and very expensive. Some parts were available in Burlington, Ontario , Canada - must check if still available;RGE;
+UT;UT;WESTINGHOUSE;;N;Y;;;;;Technically removable but not feasible so include LTC score in overall score.
+UTH;UTH;Westinghouse;;N;Y;Large O+M cost to maintain. Must drain 25,000 gallons to inspect selector compartment;;;RGE;Technically removable but not feasible so include LTC score in overall score.
+UTS;UTS;Westinghouse;;N;Y;;Similar to URT (above);Similar to URT (above);CMP;Technically removable but not feasible so include LTC score in overall score.
+UTS-A;UTSA;Westinghouse;;N;Y;;Similar to URT (above);Similar to URT (above);CMP;Technically removable but not feasible so include LTC score in overall score.
+UTT;UTT;Westinghouse;;N;Y;;Similar to URT (above);Similar to URT (above);CMP;Technically removable but not feasible so include LTC score in overall score.
+UTT-A;UTTA;Westinghouse;;N;Y;;Similar to URT (above);Similar to URT (above);CMP;Technically removable but not feasible so include LTC score in overall score.
+UTTA MO;UTTAMO;Westinghouse;;N;N;;;;RGE;Technically removable but not feasible so include LTC score in overall score.
+UTTA-MO;UTTAMO;Westinghouse;;N;N;;;;RGE;Technically removable but not feasible so include LTC score in overall score.
+UTTA-MOD;UTTAMOD;Westinghouse;;N;N;;;;RGE;Technically removable but not feasible so include LTC score in overall score.
+UTTB;UTTB;Westinghouse;;N;Y;;Same as above;Same as above;RGE;Technically removable but not feasible so include LTC score in overall score.
+UTT-B;UTTB;Westinghouse;;N;Y;;Similar to URT (above);Similar to URT (above);CMP;Technically removable but not feasible so include LTC score in overall score.
+UTTMOD;UTTMOD;Westinghouse;;N;N;;;;RGE;Technically removable but not feasible so include LTC score in overall score.
+UTT-MOD;UTTMOD;Westinghouse;;N;N;;;;RGE;Technically removable but not feasible so include LTC score in overall score.
+UVT;UVT;Westinghouse;Y;N;Y;Outdated vacuum protection system No runback on vacuum failure. Drive shaft failures in both units;Early design of a vacuum diverter. Problems with sequence timing and water leaks through top mounted inspection glass.- Design purchased by MR - redesigned type called RMV;To eliminate frequent problems consider retirement.;RGE;
+UVW;UVW;Westinghouse;Y;N;N;;;;CMP;
+UZ;UZ;;;Y;N;;;;;
+UZD;UZD;ABB;;Y;N;;;;CMP;
+UZDRT;UZDRT;Various;;Y;N;;;;RGE;
+UZD-RT;UZDRT;VARIOUS;;Y;N;;;;NYSEG;
+UZE;UZE;ABB;;Y;N;;;;CMP;
+UZE RT;UZERT;ABB;;Y;N;;;;;
+UZERN;UZERN;Pauwells Traffo;;Y;N;;;;CMP;
+UZERT;UZERT;ABB;;Y;N;;;;CMP;
+UZERT 200/600;UZERT;ABB;;Y;N;;;;;
+UZF;UZF;PAUWELLS TRAFFO;;Y;N;;;;NYSEG;
+UZFRN;UZFRN;Pauwells Traffo;;Y;N;;;;RGE;
+UZF-RN;UZFRN;PAUWELLS TRAFFO;;Y;N;;;;NYSEG;
+UZFRT;UZFRT;Hevi-Duty (ABB);;Y;N;;;;RGE;
+UZF-RT;UZFRT;Hevi-Duty (ABB);;Y;N;;;;;
+UZFRT200600;UZFRT;Hevi-Duty (ABB);;Y;N;;;;RGE;
+UZRDT;UZRDT;Hevi-Duty (ABB);;Y;N;;;;NYSEG;
+V 1;V1;COOPER POWER;Y;n;n;;;;NYSEG;
+V 2A;V2A;COOPER POWER;Y;n;n;;;;NYSEG;
+V1;V1;PTTI;Y;N;N;;;;RGE;
+V1-A;V1A;COOPER POWER;Y;N;N;;;;NYSEG;
+V2A;V2A;PTTI;Y;N;N;;;;RGE;
+V2-A;V2A;Cooper Power;Y;N;N;;;;RGE;
+V-2A;V2A;PTTI;Y;N;N;;;;;
+VAC;?;Prolec;Y;;;;;;;
+VMLT32;VMLT32;General Electric;Y;N;Y;Problems with vacuum protection system and mechanism drive gears;;;RGE;
+VMLT-32;VMLT32;General Electric;Y;N;Y;Problems with vacuum protection system and mechanism drive gears;;;RGE;
+VR;VR;REINHAUSEN;Y;Y;N;;;;NYSEG;
+VRC;VRC;PROLEC;Y;Y;N;;;;CMP;
+VRC11001123;VRC;PROLEC;Y;Y;N;;;;CMP;
+VRF;VRF;REINHAUSEN;Y;Y;N;;;;;
+VRLTC;VR;REINHAUSEN;Y;Y;N;;;;NYSEG;
+VRLTC 1500;VRLTC1500;WEG;Y;Y;N;;;;CMP;
+VRLTC1500;VRLTC1500;WEG;Y;Y;N;;;;CMP;
