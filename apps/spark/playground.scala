@@ -1,9 +1,7 @@
 // reset avangrid database
 
 spark.sql("DROP DATABASE IF EXISTS avangrid CASCADE")
-spark.sql("DROP DATABASE IF EXISTS avangrid_datastore_testing CASCADE")
 spark.sql("CREATE DATABASE avangrid LOCATION '/opt/spark-apps/spark-warehouse/avangrid.db'")
-spark.sql("CREATE DATABASE avangrid_datastore_testing LOCATION '/opt/spark-apps/spark-warehouse/avangrid_testing.db'")
 
 /** Config file
   * This is a temporary config in a string variable
@@ -227,10 +225,10 @@ object CreateExternalTable {
                     val part1 = monthExp findAllIn f.toString.toLowerCase
                     val query = "query_" + table_name
  
-                    CreateExternalTable.createExternalTableStruct(database = "avangrid_datastore_testing", tableName = table_name)
+                    CreateExternalTable.createExternalTableStruct(database = "avangrid", tableName = table_name)
                   
                     CreateExternalTable.loadDataToExternalTable1(
-                        database = "avangrid_datastore_testing",
+                        database = "avangrid",
                         tableName = table_name,
                         inputFilePath = f.toString,
                         partitionColumn0 = part0.group(1),
@@ -238,7 +236,7 @@ object CreateExternalTable {
                         partitionColumn1 = part1.group(1),
                         partitionValue1 = part1.group(2)
                     )
-                    spark.sql("SELECT count(*) FROM avangrid_datastore_testing.customer_count").show()
+                    spark.sql(s"SELECT count(*) FROM avangrid.${table_name}").show()
                 } 
             }
         }
@@ -247,51 +245,13 @@ object CreateExternalTable {
 
 }
 
-// spark-shell --jars /opt/spark-libraries/microsoft/azure/synapse/synapseutils_2.12/1.4/synapseutils_2.12-1.4.jar,/opt/spark-libraries/typesafe/config/1.4.1/config-1.4.1.jar -I /opt/spark-apps/playground.scala
-
-
-
-/*
-val tableName = "customer_count"
-val database = "avangrid"
-val queryName = s"query_${tableName}"
-
-val yearExp = new Regex("(file_year)=([0-9]{4})")
-val monthExp = new Regex("(file_month)=([0-9]{2})")
-
-val inputFilePath = path
-val part0 = yearExp findAllIn path.toLowerCase
-val part1 = monthExp findAllIn path.toLowerCase
-val partitionColumn0 = part0.group(1)
-val partitionValue0 = part0.group(2)
-val partitionColumn1 = part1.group(1)
-val partitionValue1 = part1.group(2)
- */
-
 
 
 /* 
-val path = "/opt/spark-apps/avangrid_datastore.db/customer_count/FILE_YEAR=2021/FILE_MONTH=09"
+spark-shell --jars /opt/spark-libraries/microsoft/azure/synapse/synapseutils_2.12/1.4/synapseutils_2.12-1.4.jar,/opt/spark-libraries/typesafe/config/1.4.1/config-1.4.1.jar -I /opt/spark-apps/playground.scala
+
+val path = "/opt/spark-apps/avangrid_datastore.db/"
 CreateExternalTable.loadDataTest(path)
 spark.sql("SHOW TABLES FROM avangrid_datastore_testing").show(false)
-spark.sql("SELECT * FROM avangrid_datastore_testing.customer_count").show()
-spark.sql("SELECT count(*) FROM avangrid_datastore_testing.customer_count").show()
  */
 
-
-/* 
-val querytt = "CREATE EXTERNAL TABLE avangrid_datastore_testing.customer_test2 ( `substation` varchar(255), `equip` char(12), `asset_dx` varchar(255), `primary_voltage` float, `secondary_voltage` float, `sum_of_customers` int) PARTITIONED BY ( `file_year` string, `file_month` string) ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe' WITH SERDEPROPERTIES ( 'field.delim'='\\;', 'serialization.format'='\\;') STORED AS INPUTFORMAT 'org.apache.hadoop.mapred.TextInputFormat' OUTPUTFORMAT 'org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat' LOCATION '/avangrid_testing/customer_test/'"
-val query = queries(querytt).toString().replace("${table_name}", tableName).replace("${database}",database)
-spark.sql(querytt) 
-*/
-
-/* 
-spark.sql("DROP DATABASE IF EXISTS avangrid CASCADE")
-spark.sql("DROP DATABASE IF EXISTS avangrid_datastore_testing CASCADE")
-spark.sql("CREATE DATABASE avangrid LOCATION '/opt/spark-apps/spark-warehouse/avangrid.db'")
-spark.sql("CREATE DATABASE avangrid_datastore_testing LOCATION '/opt/spark-apps/spark-warehouse/avangrid_testing.db'")
-
-spark.sql("CREATE EXTERNAL TABLE avangrid_datastore_testing.test_table (column1 varchar(255),column2 int ) LOCATION '/opt/spark-apps/spark-warehouse/avangrid_testing.db/test_table/'")
-spark.sql("INSERT INTO avangrid_datastore_testing.test_table VALUES ('A',10)") 
-spark.sql("SELECT * FROM avangrid_datastore_testing.test_table").show()
-  */
