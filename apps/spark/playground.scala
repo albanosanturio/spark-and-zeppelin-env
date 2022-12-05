@@ -1,3 +1,10 @@
+// reset avangrid database
+
+spark.sql("DROP DATABASE IF EXISTS avangrid CASCADE")
+spark.sql("DROP DATABASE IF EXISTS avangrid_datastore_testing CASCADE")
+spark.sql("CREATE DATABASE avangrid LOCATION '/opt/spark-apps/spark-warehouse/avangrid.db'")
+spark.sql("CREATE DATABASE avangrid_datastore_testing LOCATION '/opt/spark-apps/spark-warehouse/avangrid.db'")
+
 /** Config file
   * This is a temporary config in a string variable
   * while the Blob Storage Gen2 is un available
@@ -24,7 +31,7 @@ avangrid_database_tables_list = [
 ]
 
 queries {
-  query_customer_count                          = "CREATE EXTERNAL TABLE `${database}`.`${table_name}`( `substation` varchar(255), `equip` char(12), `asset_dx` varchar(255), `primary_voltage` float, `secondary_voltage` float, `sum_of_customers` int) PARTITIONED BY ( `file_year` string, `file_month` string) ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe' WITH SERDEPROPERTIES ( 'field.delim'='\\;', 'serialization.format'='\\;') STORED AS INPUTFORMAT 'org.apache.hadoop.mapred.TextInputFormat' OUTPUTFORMAT 'org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat' LOCATION '/${database}/${table_name}'",  
+  query_customer_count                          = "CREATE EXTERNAL TABLE ${database}.${table_name} ( `substation` varchar(255), `equip` char(12), `asset_dx` varchar(255), `primary_voltage` float, `secondary_voltage` float, `sum_of_customers` int) PARTITIONED BY ( `file_year` string, `file_month` string) ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe' WITH SERDEPROPERTIES ( 'field.delim'='\\;', 'serialization.format'='\\;') STORED AS INPUTFORMAT 'org.apache.hadoop.mapred.TextInputFormat' OUTPUTFORMAT 'org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat' LOCATION '/${database}/${table_name}'",  
   query_customer_owned                          = "CREATE EXTERNAL TABLE `${database}`.`${table_name}`( `equip` varchar(255), `func_loc` varchar(255), `serial_num` varchar(255), `division` varchar(255), `substation` varchar(255), `bank_desc` varchar(255), `manufacturer` varchar(255), `voltage` float, `voltage_level` varchar(255), `size` int, `constr_year` int, `age` int, `oltc_found` varchar(255), `oltc_removable` varchar(255)) PARTITIONED BY ( `file_year` int, `file_month` int) ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe' WITH SERDEPROPERTIES ( 'field.delim'='\\;', 'serialization.format'='\\;') STORED AS INPUTFORMAT 'org.apache.hadoop.mapred.TextInputFormat' OUTPUTFORMAT 'org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat' LOCATION '/${database}/${table_name}'",
   query_dta_web_bushing                         = "CREATE EXTERNAL TABLE `${database}`.`${table_name}`( `apparatus_id` string, `apparatus_type` string, `serial_num` string, `year_manufacture` int, `special_id` string, `model_number` string, `manufacturer` string, `cooling_class` string, `configuration` string, `coolant` string, `tank_type` string, `kv_rating_0` double, `kv_rating_1` double, `kv_rating_2` double, `phases` int, `manufacturer_location` string, `basic_insulation_level` double, `weight` double, `weight_unit` string, `oil_volume` double, `oil_volume_units` string, `va_rating_0` double, `va_rating_1` double, `va_rating_2` double, `va_rating_3` double, `va_rating_units` string, `leakage_reactance_winding_hl` string, `winding_temperature_rise` double, `winding_material` string, `air_temperature` double, `cct_designation` string, `company` string, `division` string, `first_revision_date` string, `humidity` double, `id` string, `internal_temperature` double, `last_revision_date` string, `location` string, `test_date` string, `test_note` string, `test_number` int, `upload_date` string, `weather` string, `manual_rating` string, `frank_rating` string) PARTITIONED BY ( `file_year` string, `file_month` string) ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe' WITH SERDEPROPERTIES ( 'field.delim'='\\;', 'serialization.format'='\\;') STORED AS INPUTFORMAT 'org.apache.hadoop.mapred.TextInputFormat' OUTPUTFORMAT 'org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat' LOCATION '/${database}/${table_name}'",
   query_dta_web_excitation_current              = "CREATE EXTERNAL TABLE `${database}`.`${table_name}`( `apparatus_id` string, `apparatus_type` string, `serial_num` string, `year_manufacture` int, `special_id` string, `model_number` string, `manufacturer` string, `cooling_class` string, `configuration` string, `coolant` string, `tank_type` string, `kv_rating_0` double, `kv_rating_1` double, `kv_rating_2` double, `phases` int, `manufacturer_location` string, `basic_insulation_level` double, `weight` double, `weight_unit` string, `oil_volume` double, `oil_volume_units` string, `va_rating_0` double, `va_rating_1` double, `va_rating_2` double, `va_rating_3` double, `va_rating_units` string, `leakage_reactance_winding_hl` string, `winding_temperature_rise` double, `winding_material` string, `air_temperature` double, `cct_designation` string, `company` string, `division` string, `first_revision_date` string, `humidity` double, `id` string, `internal_temperature` double, `last_revision_date` string, `location` string, `test_date` string, `test_note` string, `test_number` int, `upload_date` string, `weather` string, `manual_rating` string, `frank_rating` string) PARTITIONED BY ( `file_year` string, `file_month` string) ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe' WITH SERDEPROPERTIES ( 'field.delim'='\\;', 'serialization.format'='\\;') STORED AS INPUTFORMAT 'org.apache.hadoop.mapred.TextInputFormat' OUTPUTFORMAT 'org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat' LOCATION '/${database}/${table_name}'",
@@ -118,15 +125,15 @@ import com.typesafe.config.{ConfigFactory,ConfigRenderOptions}
 val config = ConfigFactory.parseString(configString)
 val avangrid_database_tables_list = config.getStringList("avangrid_database_tables_list").toList
 
-val queries = config.getObject("queries").toMap
+val queries = config.getObject("queries").toMap.mapValues(_.unwrapped())
 
-val o = config.getConfig("options")
-val v = o.root.keySet.map( x=> { o.getObject(x).map( y => { (y._1 -> y._2.unwrapped.toString) } ) } )
-val k = o.root.keySet
+val op = config.getConfig("options")
+val v = op.root.keySet.map( x=> { op.getObject(x).map( y => { (y._1 -> y._2.unwrapped.toString) } ) } )
+val k = op.root.keySet
 val options = k zip v toMap
+val options2 = op.root.unwrapped()
 
-
-
+import com.microsoft.azure.synapse._
 import mssparkutils._
 import org.apache.spark.sql.DataFrame
 import java.io.File
@@ -147,6 +154,7 @@ object CreateExternalTable {
 
   }
 
+
   /** Creates and loads data to a external table from a file in the
    * Azure Data Lake Storage Gen2 when the table has two values 
    * file_year & file_month
@@ -159,17 +167,18 @@ object CreateExternalTable {
    * @param partitionColumn1 The name of the second column to partition by
    * @param partitionValue1 The value of the second column to partition by
    */
-  def loadDataToExternalTable(database: String, tableName: String, inputFilePath: String,
+  def loadDataToExternalTable1(database: String, tableName: String, inputFilePath: String,
                               partitionColumn0: String, partitionValue0: String,
                               partitionColumn1: String, partitionValue1: String): Unit = {
     val o = "options_" + tableName
+    val optionsMap = op.getObject(o).map(y=> { ( y._1 -> y._2.unwrapped.toString) } )
     val df1 = spark.table(s"${database}.${tableName}").drop(col(s"${partitionColumn0}")).drop(col(s"${partitionColumn1}"))
-    val df2 = spark.read.options(options(o)).schema(df1.schema).csv(inputFilePath)
+    val df2 = spark.read.options(optionsMap).schema(df1.schema).csv(inputFilePath)
     df2.createOrReplaceTempView("myPreOutputTable")
 
     //Write the data in the table
     spark.sql(
-      s"""INSERT OVERWRITE TABLE $database.$tableName
+      s"""INSERT INTO TABLE $database.$tableName
       PARTITION (
       ${partitionColumn0} = ${partitionValue0},
       ${partitionColumn1} = ${partitionValue1}
@@ -181,20 +190,23 @@ object CreateExternalTable {
     spark.catalog.dropTempView("myPreOutputtable")
   }
 
-  /** Creates and loads data to a external table from a file in the
-   * Azure Data Lake Storage Gen2 when the table has one value 
-   * execution_date
-   *
-   * @param database The database where the table will be created
-   * @param tableName The name of the table
-   * @param inputFilePath The path to the data to be inserted in the table
-   * @param partitionColumn0 The name of the first column to partition by
-   * @param partitionValue0 The value of the first column to partition by
-   */
+
+
+    /** Creates and loads data to a external table from a file in the
+    * Azure Data Lake Storage Gen2 when the table has one value 
+    * execution_date
+    *
+    * @param database The database where the table will be created
+    * @param tableName The name of the table
+    * @param inputFilePath The path to the data to be inserted in the table
+    * @param partitionColumn0 The name of the first column to partition by
+    * @param partitionValue0 The value of the first column to partition by
+    */
   def loadDataToExternalTable(database: String, tableName: String, inputFilePath: String,
                               partitionColumn0: String, partitionValue0: String): Unit = {
     val o = "options_" + tableName
-    val df1 = spark.table(s"${database}.${tableName}").drop(col(s"${partitionColumn0}")).drop(col(s"${partitionColumn1}"))
+    val optionsMap = op.getObject(o).map(y=> { ( y._1 -> y._2.unwrapped.toString) } )
+    val df1 = spark.table(s"${database}.${tableName}").drop(col(s"${partitionColumn0}"))
     val df2 = spark.read.options(options(o)).schema(df1.schema).csv(inputFilePath)
     df2.createOrReplaceTempView("myPreOutputTable")
 
@@ -211,6 +223,7 @@ object CreateExternalTable {
     spark.catalog.dropTempView("myPreOutputtable")
   }
 
+
   // Regular expressions to find the partition field and value
   // in the path
   val yearExp = new Regex("(file_year)=([0-9]{4})")
@@ -225,21 +238,24 @@ object CreateExternalTable {
    *
    * @param path Azure Data Lake Storage Gen2 path where the files are
    */
-  def loadData(path: String): Unit = {
+
+  // This method works for partition = file_month + file_year
+
+  def loadDataYM(path: String): Unit = {
     mssparkutils.fs.ls(path).foreach {
       f => {
         f.isDir match {
-          case true => load_data(f.path) // Array[com.microsoft.spark.notebook.msutils.MSFileInfo]
+          case true => loadDataYM(f.path) // Array[com.microsoft.spark.notebook.msutils.MSFileInfo]
           case false => {
-            val table_name = avangrid_database_tables.find(f.path.contains(_)).getOrElse("Error")
+            val table_name = avangrid_database_tables_list.find(f.path.contains(_)).getOrElse("Error")
             //TODO This code will fail when the partition is execution_date
             val part0 = yearExp findAllIn f.path.toLowerCase
             val part1 = monthExp findAllIn f.path.toLowerCase
             val query = "query_" + table_name
-            createExternalTableStruct(database = "avangrid_datastore", table_name = table_name)
-            loadDataToExternalTable(
-              database = "avangrid_datastore",
-              table_name = table_name,
+            createExternalTableStruct(database = "avangrid_datastore_testing", tableName = table_name)
+            loadDataToExternalTable1(
+              database = "avangrid_datastore_testing",
+              tableName = table_name,
               inputFilePath = f.path,
               partitionColumn0 = part0.group(1),
               partitionValue0 = part0.group(2),
@@ -251,15 +267,143 @@ object CreateExternalTable {
       }
     }
   }
+
+
+
 }
 
 
-// the database is hardcoded to avangrid_datastore
-// loadData("abfss://pull-raw-data@dlsypnaseiedrnysegrgeint.dfs.core.windows.net/poc_asstmgmt/avangrid_datastore.db/")
+
+
+
+val tableName = "customer_count"
+val database = "avangrid"
+val queryName = s"query_${tableName}"
+
+
+CreateExternalTable.createExternalTableStruct(database,tableName)
+spark.sql("SHOW TABLES FROM avangrid").show()
+spark.sql("SELECT * FROM avangrid.customer_count").show()
+
+
+ 
+val yearExp = new Regex("(file_year)=([0-9]{4})")
+val monthExp = new Regex("(file_month)=([0-9]{2})")
+val path = "/opt/spark-apps/avangrid_datastore.db/customer_count/FILE_YEAR=2021/FILE_MONTH=09"
+val inputFilePath = path
+val part0 = yearExp findAllIn path.toLowerCase
+val part1 = monthExp findAllIn path.toLowerCase
+val partitionColumn0 = part0.group(1)
+val partitionValue0 = part0.group(2)
+val partitionColumn1 = part1.group(1)
+val partitionValue1 = part1.group(2)
 
 
 
 
-//spark-shell --jars /opt/spark-libraries/microsoft/azure/synapse/synapseutils_2.12/1.4/synapseutils_2.12-1.4.jar,/opt/spark-libraries/typesafe/config/1.4.1/config-1.4.1.jar -i loadHdfsFiles.scala
+
+CreateExternalTable.loadDataToExternalTable1(database, tableName, inputFilePath, partitionColumn0, partitionValue0, partitionColumn1, partitionValue1)
+//spark.sql("SELECT * FROM avangrid.customer_count").show()
 
 
+
+CreateExternalTable.loadDataYM(path)
+
+
+val files = mssparkutils.fs.ls("/") 
+//files.foreach{ file => println(file.name,file.isDir,file.isFile,file.size) }
+val direct = new File(path)
+direct.isDirectory
+direct.listFiles
+
+
+val direct2 = new File("/opt/spark-apps/avangrid_datastore.db/customer_count/")
+direct2.listFiles.foreach
+
+
+
+val directory = new File("/opt/spark-apps/avangrid_datastore.db/")
+if (directory.exists && directory.isDirectory) { directory.listFiles.filter(_.getName.startsWith("abc_")).foreach(println) }
+
+
+if (directory.exists && directory.isDirectory) { directory.listFiles.foreach(println) }
+
+def loadDataTest (path: String): Unit = {
+    val directory = new File(path)
+    directory.listFiles.foreach {
+        f => {
+            f.isDirectory match {
+                case true => {
+                    println("DIR  --  " + f)
+                    loadDataTest(f.toString)
+                }
+                case false =>{
+                    println("FILE --  " + f)
+
+                    val table_name = avangrid_database_tables_list.find(f.toString.contains(_)).getOrElse("Error")
+                    println(table_name)
+                    //TODO This code will fail when the partition is execution_date
+                    val part0 = yearExp findAllIn f.toString.toLowerCase
+                    val part1 = monthExp findAllIn f.toString.toLowerCase
+                    val query = "query_" + table_name
+ 
+                    CreateExternalTable.createExternalTableStruct(database = "avangrid_datastore_testing", tableName = table_name)
+                  
+                    CreateExternalTable.loadDataToExternalTable1(
+                        database = "avangrid_datastore_testing",
+                        tableName = table_name,
+                        inputFilePath = f.toString,
+                        partitionColumn0 = part0.group(1),
+                        partitionValue0 = part0.group(2),
+                        partitionColumn1 = part1.group(1),
+                        partitionValue1 = part1.group(2)
+                    )
+                    spark.sql("SELECT count(*) FROM avangrid_datastore_testing.customer_count").show()
+                } 
+            }
+        }
+    }
+}
+
+loadDataTest(path)
+spark.sql("SHOW TABLES FROM avangrid_datastore_testing").show(false)
+spark.sql("SELECT * FROM avangrid_datastore_testing.customer_count").show()
+spark.sql("SELECT count(*) FROM avangrid_datastore_testing.customer_count").show()
+
+val path = "/opt/spark-apps/avangrid_datastore.db/customer_count/"
+val directory = new File(path)
+
+
+
+val path2 = "/opt/spark-apps/avangrid_datastore.db/customer_count/"
+
+
+
+
+
+  def loadDataLocalYM(path: String): Unit = {
+    mssparkutils.fs.ls(path).foreach {
+      f => {
+        f.isDir match {
+          case true => loadDataLocalYM(f.path) // Array[com.microsoft.spark.notebook.msutils.MSFileInfo]
+          case false => {
+            val table_name = avangrid_database_tables_list.find(f.path.contains(_)).getOrElse("Error")
+            //TODO This code will fail when the partition is execution_date
+            val part0 = yearExp findAllIn f.path.toLowerCase
+            val part1 = monthExp findAllIn f.path.toLowerCase
+            val query = "query_" + table_name
+            createExternalTableStruct(database = "avangrid_datastore_testing", tableName = table_name)
+            loadDataToExternalTable1(
+              database = "avangrid_datastore_testing",
+              tableName = table_name,
+              inputFilePath = f.path,
+              partitionColumn0 = part0.group(1),
+              partitionValue0 = part0.group(2),
+              partitionColumn1 = part1.group(1),
+              partitionValue1 = part1.group(2)
+            )
+          }
+        }
+      }
+    }
+  }

@@ -131,7 +131,7 @@ val  partition_value_1 = part1.group(2)
 
 // creamos manualmente las options de parseo en un map, y vía dataframes cargamos nuestra data en una vista temporal 
 
-val options = Map("header" -> "false", "sep" -> ";")
+val options_m = Map("header" -> "false", "sep" -> ";")
 
 val df1 = spark.table(s"${database}.${table_name}").drop(col(s"${partition_column_0}")).drop(col(s"${partition_column_1}"))
 val df2 = spark.read.options(options).schema(df1.schema).csv(path)
@@ -172,7 +172,7 @@ spark.sql("SHOW TABLES FROM avangrid_datastore").show()
 //cat /etc/sudoers
 //chmod u+x /opt/spark-apps/spark-warehouse/
 
-// spark-shell --jars /opt/spark-libraries/microsoft/azure/synapse/synapseutils_2.12/1.4/synapseutils_2.12-1.4.jar,/opt/spark-libraries/typesafe/config/1.4.1/config-1.4.1.jar -I loadHdfsFiles.scala
+// spark-shell --jars /opt/spark-libraries/microsoft/azure/synapse/synapseutils_2.12/1.4/synapseutils_2.12-1.4.jar,/opt/spark-libraries/typesafe/config/1.4.1/config-1.4.1.jar -I /opt/spark-apps/loadHdfsFiles.scala
 
 
 //1. No puedo correr spark-shell con root user error: 
