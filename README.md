@@ -18,7 +18,22 @@ docker image rm -f $(docker image ls -aq)
 ```bash
 docker-compose up -d
 docker exec -it spark-master bash
-spark-submit --master spark://spark-master:7077 /opt/spark-apps/test.py
+spark-submit --master spark://spark-master:7077 /opt/spark-apps/testPy.py
 ```
 go to localhost:8080 and see the results  
 You should see the job done by the spark node under section "Applications"
+
+## Loading local files
+
+Use script in spark/apps/spark/loadLocalFiles.scala  
+Example run:
+```scala
+val path = "/opt/spark-apps/avangrid_datastore.db/"
+CreateExternalTable.loadDataYM(path)
+```
+
+NOTE: This scripts needs libraries com.typesafe.config and com.microsoft.azure.synapse  
+
+```bash
+spark-shell --jars /opt/spark-libraries/microsoft/azure/synapse/synapseutils_2.12/1.4/synapseutils_2.12-1.4.jar,/opt/spark-libraries/typesafe/config/1.4.1/config-1.4.1.jar -I /opt/spark-apps/loadLocalFiles.scala
+```
