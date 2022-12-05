@@ -12,8 +12,8 @@ services:
     volumes:
       - ./apps/spark:/opt/spark-apps:rw
       - ./data/spark:/opt/spark-data:rw
-      #- ./apps/spark/spark-warehouse:opt/spark-apps/spark-warehouse:rw
-      - /mnt/c/Users/asanturi/.m2/repository/com:/opt/spark-libraries/
+      #- /mnt/c/Users/asanturi/.m2/repository/com:/opt/spark-libraries/
+      - ./libraries/com:/opt/spark-libraries/
     environment:
       - "SPARK_LOCAL_IP=spark-master"
       - "SPARK_MODE=master"
@@ -65,7 +65,8 @@ services:
       - ./apps/spark:/opt/spark-apps
       - ./data/spark:/opt/spark-data
 
-
+# For the moment being, zeppeling not correctly implemented
+#
 #  zeppelin:
 #    image: apache/zeppelin:0.9.0
 #    container_name: zeppelin-compose
@@ -80,8 +81,8 @@ services:
 #      - ./notebooks:/notebooks
 #    #  - ./conf/interpreter.json:/zeppelin/conf/interpreter.json
 #    #  - /mnt/c/Users/asanturi/Documents/zeppelin-standalone/spark3:/opt/spark
-
-
+#
+#
 #    environment:
 #      - "ZEPPELIN_NOTEBOOK_DIR=/opt/zeppelin-notebooks"
 #      - "ZEPPELIN_LOG_DIR:/logs"

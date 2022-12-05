@@ -18,10 +18,11 @@ Example run:
 val path = "/opt/spark-apps/avangrid_datastore.db/"
 CreateExternalTable.loadDataYM(path)
 
+val path = "/opt/spark-apps/avangrid_datastore.db/customer_count/"
 
 NOTE: This scripts needs libraries com.typesafe.config and com.microsoft.azure.synapse
 
-spark-shell --jars /opt/spark-libraries/microsoft/azure/synapse/synapseutils_2.12/1.4/synapseutils_2.12-1.4.jar,/opt/spark-libraries/typesafe/config/1.4.1/config-1.4.1.jar -I /opt/spark-apps/playground.scala
+spark-shell --jars /opt/spark-libraries/microsoft/azure/synapse/synapseutils_2.12/1.4/synapseutils_2.12-1.4.jar,/opt/spark-libraries/typesafe/config/1.4.1/config-1.4.1.jar -I /opt/spark-apps/loadLocalFiles.scala
 
 
 */
