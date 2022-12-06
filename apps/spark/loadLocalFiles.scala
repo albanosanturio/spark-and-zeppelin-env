@@ -14,14 +14,25 @@ Method CreateExternalTable.createExternalTableStruct (creates schema)
 Method CreateExternalTable.loadDataToExternalTableYM (loads schema with local data)
 Method CreateExternalTable.loadDataYM (calls the two previous methods)
 
-Example run:
+Example run (all tables):
 val path = "/opt/spark-apps/avangrid_datastore.db/"
 CreateExternalTable.loadDataYM(path)
 
+Example run (customer_count table):
 val path = "/opt/spark-apps/avangrid_datastore.db/customer_count/"
+CreateExternalTable.loadDataYM(path)
+
+Example run (load_serving_regulatory_compliance table):
+val path = "/opt/spark-apps/avangrid_datastore.db/load_serving_regulatory_compliance/"
+CreateExternalTable.loadDataYM(path)
+
+See results:
+spark.sql("SHOW TABLES FROM avangrid").show(false)
+spark.sql("SELECT * FROM avangrid.customer_count").show()
+spark.sql("SELECT * FROM avangrid.load_serving_regulatory_compliance").show()
 
 NOTE: This scripts needs libraries com.typesafe.config and com.microsoft.azure.synapse
-
+Libraries included in repo in /opt/spark-libraries, run script as following:
 spark-shell --jars /opt/spark-libraries/microsoft/azure/synapse/synapseutils_2.12/1.4/synapseutils_2.12-1.4.jar,/opt/spark-libraries/typesafe/config/1.4.1/config-1.4.1.jar -I /opt/spark-apps/loadLocalFiles.scala
 
 
@@ -276,14 +287,4 @@ object CreateExternalTable {
   }
 
 }
-
-
-
-/* 
-spark-shell --jars /opt/spark-libraries/microsoft/azure/synapse/synapseutils_2.12/1.4/synapseutils_2.12-1.4.jar,/opt/spark-libraries/typesafe/config/1.4.1/config-1.4.1.jar -I /opt/spark-apps/playground.scala
-
-val path = "/opt/spark-apps/avangrid_datastore.db/"
-CreateExternalTable.loadDataYM(path)
-spark.sql("SHOW TABLES FROM avangrid_datastore_testing").show(false)
- */
 
